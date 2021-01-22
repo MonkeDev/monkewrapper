@@ -1,8 +1,11 @@
 {
     "endpoints": [
-        "images/monkey",
-        "facts/monkey",
-        "facts/cat",
-        "facts/dog"
+        "/images/pat",
+        "/images/monkey",
+        "/facts/monkey",
+        "/facts/cat",
+        "/facts/dog",
+        "/npm",
+        "/stats"
     ]
 }
