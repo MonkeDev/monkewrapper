@@ -1,0 +1,8 @@
+{
+    "endpoints": [
+        "images/monkey",
+        "facts/monkey",
+        "facts/cat",
+        "facts/dog"
+    ]
+}

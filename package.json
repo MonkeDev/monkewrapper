@@ -1,0 +1,22 @@
+{
+  "name": "monkewrapper",
+  "version": "1.0.0",
+  "description": "A Wrapper to help you interact with the MonkeDev API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonkeDev/monkewrapper.git"
+  },
+  "author": "Swaggger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MonkeDev/monkewrapper/issues"
+  },
+  "homepage": "https://github.com/MonkeDev/monkewrapper#readme",
+  "dependencies": {
+    "phin": "^3.5.1"
+  }
+}
