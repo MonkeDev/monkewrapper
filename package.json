@@ -10,13 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/MonkeDev/monkewrapper.git"
   },
-  "author": "Swaggger",
-  "license": "ISC",
+  "author": "Swaggger/BurnedBed",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MonkeDev/monkewrapper/issues"
   },
   "homepage": "https://github.com/MonkeDev/monkewrapper#readme",
   "dependencies": {
     "phin": "^3.5.1"
-  }
+  },
+  "keywords": [
+      "monkey",
+      "monkeyapi",
+      "monkewrapper"
+  ]
 }
