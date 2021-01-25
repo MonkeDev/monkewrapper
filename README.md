@@ -45,9 +45,8 @@ monke(<endpoint>, [args])
 
 // async promise
 
-const monke = require('monkewrapper');
-
 (async () => {
+  const monke = require('monkewrapper');
   const res = await monke(<endpoint>, [args]);
   
   console.log(res);
