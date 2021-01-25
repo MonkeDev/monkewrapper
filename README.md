@@ -6,8 +6,8 @@
 **<ins>Steps:</ins>**
 * Go to the `extensions` tab in `vscode` 
 * Search `monkesnippets` and then install
-* Go to any file and write `api.`
-* [There you will see all the snippets that can be created into your project](https://cdn.discordapp.com/attachments/715004705193066536/803078182483263528/unknown.png)
+* Go to any file and type `api.`
+* There you will see [all the snippets](https://cdn.discordapp.com/attachments/715004705193066536/803078182483263528/unknown.png) that can be created into your project
 * Lastly, just click (or tab) on the snippet and code shall be generated
 
 **EXAMPLE**: `api.image.monkey` in the file, then click tab!
@@ -28,7 +28,7 @@ monke("/npm", { name: "monkewrapper" }) // Retrieves information about that npm 
 
 # Documentation
 ## Documentation Syntax
-**<ins>Just a little notice:</ins>**
+**<ins>Just a little notice:</ins>**\
 **<>** - means required, EX: <endpoint> // `endpoint` is required\
 **[]** - means optional **or** not needed in most use cases // `args` is optional or not used most of the time\
 * Remember that these symbols don't have any actual contribution to the code meaning that they are meant to be removed / ignored
@@ -66,7 +66,7 @@ const monke = require('monkewrapper');
 `/stats`
 
 ## Args Object
-### The arguments object help indentify the parameters of the url, **Example:** `{ name: "monkewrapper" }` | https://monke.vip/api/npm?name=monkewrapper
+### Please indentify the `parameters` of the url in the `args object` for endpoints with required/optional parameters **Example:** `{ name: "monkewrapper" }` | https://monke.vip/api/npm?name=monkewrapper
 
 
 ## MonkeDev API Docs
