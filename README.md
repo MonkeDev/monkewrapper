@@ -21,7 +21,7 @@ npm i monkewrapper --save
 ```js
 const monke = require('monkewrapper');
 
-monke("/npm", { name: "monkewrapper" }) // Retrieves information about that npm package
+monke("/npm", { query: "monkewrapper" }) // Retrieves information about that npm package
 .then(console.log)
 .catch(console.error);
 ```
