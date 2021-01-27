@@ -1,6 +1,6 @@
 # MonkeDev API Wrapper
 
-### This wrapper was created to make the [MonkeDev API](https://api.monke.vip/docs) easier to use for you HTTP beginners. If you need more help you can join our [discord server](https://discord.gg/tqeyYrS43A)
+### This wrapper was created to make the [MonkeDev API](https://api.monke.vip/docs) easier to use for you HTTP beginners. If you need more help you can join our [discord server](https://discord.gg/tqeyYrS43A)!
 ---
 ## MonkeDev API Docs
 ### Please check out the [documentation](https://api.monke.vip/docs) for information of each endpoint!
