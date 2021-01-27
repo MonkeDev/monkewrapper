@@ -1,11 +1,15 @@
 # MonkeDev API Wrapper
 
-### This wrapper was created to make the [MonkeDev API](https://api.monke.vip/docs) easier to use for you HTTP noobs. 
-
+### This wrapper was created to make the [MonkeDev API](https://api.monke.vip/docs) easier to use for you HTTP beginners. If you need more help you can join our [discord server](https://discord.gg/tqeyYrS43A)
+---
+## MonkeDev API Docs
+### Please check out the [documentation](https://api.monke.vip/docs) for information of each endpoint!
 # Installation
 ```
 npm i monkewrapper
 ```
+
+
 
 # Example
 ```js
@@ -16,16 +20,9 @@ const monke = new monkeWrapper('API_KEY'); // If you do not have a key leave bla
     console.log(res);
 })();
 ```
-
-# Documentation
-## Documentation Syntax
-**<ins>Just a little notice:</ins>**\
-**<>** - means required, EX: <endpoint> // `endpoint` is required\
-**[]** - means optional **or** not needed in most use cases // `args` is optional or not used most of the time
-* Remember that these symbols don't have any actual contribution to the code meaning that they are meant to be removed / ignored
   
-## Implementation
-### Discord.js bot
+# Implementation
+### Discord.js bots
 ```js
 const monkeWrapper = require('monkewrapper');
 const key = null; // If you have a key replace it with null.
@@ -84,9 +81,5 @@ bot.on('messageCreate', async message => {
 
 `/canvas/gay`
 
-## Args Object
-### Please indentify the `parameters` of the url in the `args object` for endpoints with required/optional parameters **Example:** `{ imgUrl: "https://exmaple.com/image.png" }` | https://api.monke.vip/canvas/gay?imgUrl=https://exmaple.com/image.png
-
-
-## MonkeDev API Docs
-### Please check out the actual [documentation](https://api.monke.vip/docs) for more information of each endpoint!
+## query Object
+### Please indentify the `parameters` of the url in the `query object` for endpoints with required/optional parameters **Example:** `{ imgUrl: "https://exmaple.com/image.png" }` | https://api.monke.vip/canvas/gay?imgUrl=https://exmaple.com/image.png
