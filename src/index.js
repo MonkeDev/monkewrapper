@@ -1,34 +1,34 @@
-const p = require('phin');
+const f = require('node-fetch').default;
 const e = require('./endpoints.json');
 const err = require('./errors.json');
 
-/**
- * Make a request with the MonkeDev API
- */
-const monke = async (endpoint, args) => {
-    this.endpoint = endpoint;
+const baseUrl = 'https://api.monke.vip';
 
-    if(!e.endpoints.includes(this.endpoint)) throw err.cannotFind;
+const monkewrapper = class {
+    constructor(key) {
+        this.key = key;
+    };
 
-        if(this.endpoint === "/npm") {
-            let query;
-            if(args.query) 
-                query = args.query;
-            else 
-                throw err.addQuery;
-
-            const res = await p({
-                url: `https://monke.vip/api/npm?name=${query}`,
-                parse: "json"
-            });
-
-            return res.body;
+    makeQuery(obj) {
+        if(this.key) obj.key = this.key;
+        let q = ''
+        for (const key in obj) {
+            const val = Object.getOwnPropertyDescriptor(obj, key)?.value;
+            if(q.length == 0) {
+                q += `?${encodeURI(key)}=${encodeURI(val)}`
+            } else {
+                q += `&${encodeURI(key)}=${encodeURI(val)}`
+            };
         }
-        const res = await p({
-            url: `https://monke.vip/api${this.endpoint}`,
-            parse: "json"
-        });
-            return res.body;
-} 
+        return q;
+    }
+    async get (endPoint, query) {
+        if(!e.endpoints.includes(endPoint)) throw err.cannotFind;
+        let toFetch = baseUrl + endPoint + this.makeQuery(query);
+        const res = await f(toFetch)
+        return res;
+    };
+};
 
-module.exports = monke;
+
+module.exports = monkewrapper;

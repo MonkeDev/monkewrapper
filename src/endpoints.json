@@ -1,11 +1,14 @@
 {
     "endpoints": [
-        "/images/pat",
-        "/images/monkey",
+
+        "/attachments/monkey",
+
         "/facts/monkey",
         "/facts/cat",
         "/facts/dog",
-        "/npm",
-        "/stats"
+
+        "/canvas/gay"
+
+
     ]
 }

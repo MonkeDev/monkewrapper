@@ -1,72 +1,92 @@
 # MonkeDev API Wrapper
 
-### This wrapper was created to make the [MonkeDev API](https://monke.vip/api/docs) easier to use for you HTTPS noobs. 
-
-### Need to write the code faster? Use our `vscode extension`!
-**<ins>Steps:</ins>**
-* Go to the `extensions` tab in `vscode` 
-* Search `monkesnippets` and then install
-* Go to any file and type `api.`
-* There you will see [all the snippets](https://cdn.discordapp.com/attachments/715004705193066536/803078182483263528/unknown.png) that can be created into your project
-* Lastly, just click (or tab) on the snippet and code shall be generated
-
-**EXAMPLE**: `api.image.monkey` in the file, then click tab!
+### This wrapper was created to make the [MonkeDev API](https://api.monke.vip/docs) easier to use for you HTTP noobs. 
 
 # Installation
 ```
-npm i monkewrapper --save
+npm i monkewrapper
 ```
 
 # Example
 ```js
-const monke = require('monkewrapper');
-
-monke("/npm", { query: "monkewrapper" }) // Retrieves information about that npm package
-.then(console.log)
-.catch(console.error);
+const monkeWrapper = require('monkewrapper');
+const monke = new monkeWrapper('API_KEY'); // If you do not have a key leave blank
+(async () => {
+    const res = await (await monke.get('/facts/dog')).json();
+    console.log(res);
+})();
 ```
 
 # Documentation
 ## Documentation Syntax
 **<ins>Just a little notice:</ins>**\
 **<>** - means required, EX: <endpoint> // `endpoint` is required\
-**[]** - means optional **or** not needed in most use cases // `args` is optional or not used most of the time\
+**[]** - means optional **or** not needed in most use cases // `args` is optional or not used most of the time
 * Remember that these symbols don't have any actual contribution to the code meaning that they are meant to be removed / ignored
   
 ## Implementation
+### Discord.js bot
 ```js
-// .then promise
+const monkeWrapper = require('monkewrapper');
+const key = null; // If you have a key replace it with null.
+const monke = new monkeWrapper(key);
 
-const monke = require('monkewrapper');
+const discord = require('discord.js');
+const bot = new discord.Client();
+bot.login('BOT_TOKEN');
 
-monke(<endpoint>, [args])
-.then(res => console.log(res))
-.catch(console.error);
+bot.on('message', async message => {
+    if(message.content.startsWith('!gay')) {
+        const user = message.mentions.members.first() || message.author;
+        const res = await (await monke.get('/canvas/gay', {imgUrl: user.avatarURL({format: 'png', size: 512})})).buffer();
+        message.channel.send(new discord.MessageAttachment(res, 'gay.png'));
+    };
 
-// async promise
+    if(message.content == '!dog-fact') {
+        const res = await (await monke.get('/facts/dog')).json();
+        message.channel.send(res.fact);
+    };
 
-(async () => {
-  const monke = require('monkewrapper');
-  const res = await monke(<endpoint>, [args]);
-  
-  console.log(res);
-})();
+});
+```
+### Eris Bot
+```js
+const monkeWrapper = require('monkewrapper');
+const key = null; // If you have a key replace it with null.
+const monke = new monkeWrapper(key);
+
+const Client = require('eris').Client;
+
+const bot = new Client('BOT_TOKEN', {defaultImageSize: 512});
+bot.connect();
+
+bot.on('messageCreate', async message => {
+    if(message.content.startsWith('!gay')) {
+        const user = message.mentions[0] || message.author;
+        const res = await (await monke.get('/canvas/gay', {imgUrl: user.staticAvatarURL})).buffer();
+        message.channel.createMessage('', {file: res, name: 'gay.png'});
+    };
+
+    if(message.content == '!dog-fact') {
+        const res = await (await monke.get('/facts/dog')).json();
+        message.channel.createMessage(res.fact);
+    };
+
+});
 ```
 
 ## Endpoints
-`/images/pat`\
-`/images/monkey`
+`/attachments/monkey`,
 
-`/facts/monkey`\
-`/facts/cat`\
-`/facts/dog`
+`/facts/monkey`,\
+`/facts/cat`,\
+`/facts/dog`,
 
-`/npm`\
-`/stats`
+`/canvas/gay`
 
 ## Args Object
-### Please indentify the `parameters` of the url in the `args object` for endpoints with required/optional parameters **Example:** `{ name: "monkewrapper" }` | https://monke.vip/api/npm?name=monkewrapper
+### Please indentify the `parameters` of the url in the `args object` for endpoints with required/optional parameters **Example:** `{ imgUrl: "https://exmaple.com/image.png" }` | https://api.monke.vip/canvas/gay?imgUrl=https://exmaple.com/image.png
 
 
 ## MonkeDev API Docs
-### Please check out the actual [documentation](https://monke.vip/api/docs) for more information of each endpoint!
+### Please check out the actual [documentation](https://api.monke.vip/docs) for more information of each endpoint!
