@@ -1,4 +1,0 @@
-{
-    "cannotFind": "Please provide a proper endpoint, EX: /facts/monkey",
-    "addQuery": "Please add something to search in the args object"
-}

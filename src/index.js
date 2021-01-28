@@ -1,6 +1,4 @@
 const f = require('node-fetch').default;
-const e = require('./endpoints.json');
-const err = require('./errors.json');
 
 const baseUrl = 'https://api.monke.vip';
 
@@ -23,9 +21,8 @@ const monkewrapper = class {
         return q;
     }
     async get (endPoint, query) {
-        if(!e.endpoints.includes(endPoint)) throw err.cannotFind;
         let toFetch = baseUrl + endPoint + this.makeQuery(query);
-        const res = await f(toFetch)
+        const res = await f(toFetch);
         return res;
     };
 };

@@ -6,7 +6,7 @@
 ### Please check out the [documentation](https://api.monke.vip/docs) for information of each endpoint!
 # Installation
 ```
-npm i monkewrapper
+npm i @monkedev/monkewrapper
 ```
 
 
@@ -71,15 +71,6 @@ bot.on('messageCreate', async message => {
 
 });
 ```
-
-## Endpoints
-`/attachments/monkey`,
-
-`/facts/monkey`,\
-`/facts/cat`,\
-`/facts/dog`,
-
-`/canvas/gay`
 
 ## query Object
 ### Please indentify the `parameters` of the url in the `query object` for endpoints with required/optional parameters **Example:** `{ imgUrl: "https://exmaple.com/image.png" }` | https://api.monke.vip/canvas/gay?imgUrl=https://exmaple.com/image.png
