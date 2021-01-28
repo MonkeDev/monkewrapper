@@ -1,6 +1,6 @@
 {
   "name": "monkewrapper",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A Wrapper to help you interact with the MonkeDev API",
   "main": "src/index.js",
   "scripts": {
@@ -25,9 +25,5 @@
     "monkewrapper",
     "api",
     "wrapper"
-  ],
-  "devDependencies": {
-    "discord.js": "^12.5.1",
-    "eris": "^0.14.0"
-  }
+  ]
 }

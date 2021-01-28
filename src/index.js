@@ -22,7 +22,7 @@ const monkewrapper = class {
         }
         return q;
     }
-    async get (endPoint, query) {
+    async get(endPoint, query) {
         if(!e.endpoints.includes(endPoint)) throw err.cannotFind;
         let toFetch = baseUrl + endPoint + this.makeQuery(query);
         const res = await f(toFetch)
